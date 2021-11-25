@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "QuickSand";
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  background-color: #9591f1;
+  color: white;
+}
+
+.navContainer {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navContainer .menuItems {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menuItems .item {
+  margin-left: 16px;
+}
+
+.menuItems .item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s linear;
+}
+
+.item a:hover {
+  color: rgb(248, 214, 202);
+}
+
+.login-register {
+  width: 350px;
+  height: 400px;
+  background: #d5e2ff;
+  border-radius: 8px;
+  padding: 32px;
+  margin: 32px auto;
+}
+
+.login-register h2 {
+  margin: 0;
+}
+
+.formInput {
+  margin: 20px 0;
+}
+
+.formInput label {
+  margin-bottom: 5px !important;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.buttonContainer {
+  margin-top: 40px;
+}
+
+.loginBtnContainer {
+  margin-left: 20px;
+}
+.loginBtnContainer button {
+  margin-left: 16px;
+}
+
+.registerBtn {
+  min-width: 100px;
+  height: 40px;
+  background: rgb(20, 179, 126);
+  color: white;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+  border: 1px solid rgb(20, 179, 126);
+  font-weight: 500;
+}
+
+.loginBtn {
+  min-width: 80px;
+  height: 30px;
+  background: darkcyan;
+  color: white;
+  border-radius: 4px;
+  box-shadow: none;
+  border: none;
+  border: 1px solid darkcyan;
+}
