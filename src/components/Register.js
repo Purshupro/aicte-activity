@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Registration = () => {
 
-    const registerUser = () => {
-        console.log('user');
-    }
+    // const registerUser = () => {
+    //     console.log('user');
+    // }
 
     return (
         <div className="login-register">
             <h2>Register for a new account</h2>
-            <form action={registerUser} method="post">
+            <form action="" method="post">
                 <div className="formInput">
                     <label htmlFor="userName">Username</label>
                     <div>
@@ -30,7 +32,7 @@ const Registration = () => {
                     <button type="submit" className="registerBtn">Register</button>
                     <span className="loginBtnContainer">
                         <small>Already Registered ?</small>
-                        <button className="loginBtn">Login</button>
+                        <Link to="/signin"><button className="loginBtn">Login</button></Link>
                     </span>
                 </div>
             </form>

@@ -103,3 +103,14 @@ code {
   border: none;
   border: 1px solid darkcyan;
 }
+
+.mainContainer {
+  /* background: url(./assets/images/education.jpg) no-repeat;
+  background-position: center;
+  background-size: cover; */
+  text-align: center;
+}
+
+.mainContainer .registerBtn {
+  margin-left: 20px;
+}
