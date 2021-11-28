@@ -6,6 +6,7 @@ body {
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(./assets/images/stripes-light.png);
 }
 
 code {
@@ -49,7 +50,7 @@ code {
 
 .login-register {
   width: 350px;
-  height: 400px;
+  min-height: 400px;
   background: #d5e2ff;
   border-radius: 8px;
   padding: 32px;
@@ -70,6 +71,15 @@ code {
   font-weight: 500;
 }
 
+.formInput input {
+  border: none;
+  padding: 10px 5px;
+  border-bottom: 1px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: whitesmoke;
+}
+
 .buttonContainer {
   margin-top: 40px;
 }
@@ -77,6 +87,7 @@ code {
 .loginBtnContainer {
   margin-left: 20px;
 }
+
 .loginBtnContainer button {
   margin-left: 16px;
 }
@@ -113,4 +124,23 @@ code {
 
 .mainContainer .registerBtn {
   margin-left: 20px;
+}
+
+.cardsContainer {
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: 250px 250px 250px 250px;
+  max-width: 1120px;
+  margin: 20px auto;
+}
+
+.events_card {
+  /* margin-top: 10px; */
+  padding: 10px;
+}
+.events_card h4 {
+  margin: 10px 0 15px 0;
+}
+.events_card h6 {
+  margin: 5px 0;
 }
