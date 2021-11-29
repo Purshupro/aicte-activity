@@ -19,6 +19,14 @@ code {
   color: white;
 }
 
+.logo_container {
+  margin: 10px 0;
+}
+
+.logo {
+  margin: 0;
+}
+
 .navContainer {
   max-width: 1120px;
   margin: 0 auto;
@@ -37,15 +45,16 @@ code {
   margin-left: 16px;
 }
 
-.menuItems .item a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: all 0.2s linear;
-}
-
 .item a:hover {
   color: rgb(248, 214, 202);
+}
+
+.menuItems .item.searchInput {
+  border: none;
+  padding: 10px;
+  margin-left: 16px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .login-register {
@@ -85,16 +94,17 @@ code {
 }
 
 .loginBtnContainer {
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  float: right;
 }
 
 .loginBtnContainer button {
-  margin-left: 16px;
+  margin-left: 10px;
 }
 
 .registerBtn {
-  min-width: 100px;
-  height: 40px;
+  min-width: 80px;
+  height: 30px;
   background: rgb(20, 179, 126);
   color: white;
   border-radius: 4px;
@@ -138,9 +148,11 @@ code {
   /* margin-top: 10px; */
   padding: 10px;
 }
+
 .events_card h4 {
   margin: 10px 0 15px 0;
 }
+
 .events_card h6 {
   margin: 5px 0;
 }

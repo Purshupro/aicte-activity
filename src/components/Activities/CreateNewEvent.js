@@ -32,7 +32,7 @@ const CreateNewEvent = () => {
 
     return (
         <div className="login-register">
-            <h2>Create New Event</h2>
+            <h2>Add Upcoming Event</h2>
             <form onSubmit={registerUser} method="post">
                 <div className="formInput">
                     <label htmlFor="eventName">Event Name</label>
