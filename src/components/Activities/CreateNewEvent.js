@@ -9,8 +9,10 @@ const CreateNewEvent = () => {
     const [timings, setTimings] = useState("");
     const [participants, setParticipants] = useState("");
     const [department, setDepartment] = useState("");
-    const [file, setFile] = useState("");
+    const [broucher, setBroucher] = useState("");
+    const [mode, setMode] = useState("");
     const [eventType, setEventType] = useState("");
+    const [image, setImage] = useState("");
 
     const registerUser = (e) => {
         e.preventDefault();
@@ -23,6 +25,10 @@ const CreateNewEvent = () => {
                 timings: timings,
                 no_of_participants: participants,
                 dept: department,
+                mode: mode,
+                broucher: broucher,
+                image: image,
+                event_type: eventType
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -72,12 +78,13 @@ const CreateNewEvent = () => {
                     <FormLabel component="legend">Mode</FormLabel>
                     <RadioGroup
                         aria-label="mode"
-                        defaultValue="online"
+                        defaultValue="1"
                         name="radio-buttons-group"
+                        onChange={(e) => setMode(e.target.value)}
                     >
                         <Box sx={{ display: 'flex' }}>
-                            <FormControlLabel value="online" control={<Radio />} label="Online" />
-                            <FormControlLabel value="offline" control={<Radio />} label="Offline" />
+                            <FormControlLabel value={mode} control={<Radio />} label="Online" />
+                            <FormControlLabel value={mode} control={<Radio />} label="Offline" />
                         </Box>
                     </RadioGroup>
                 </FormControl>
@@ -88,9 +95,15 @@ const CreateNewEvent = () => {
                     </div>
                 </div>
                 <div className="formInput">
-                    <label htmlFor="fileUpload">File</label>
+                    <label htmlFor="fileUpload">Broucher</label>
                     <div>
-                        <input type="file" name="fileUpload" id="fileUpload" value={file} onChange={(e) => setFile(e.target.value)} />
+                        <input type="file" name="fileUpload" id="fileUpload" value={broucher} onChange={(e) => setBroucher(e.target.value)} />
+                    </div>
+                </div>
+                <div className="formInput">
+                    <label htmlFor="imageUpload">Upload Images</label>
+                    <div>
+                        <input type="image" alt="Upload Image" name="imageUpload" id="imageUpload" value={image} onChange={(e) => setImage(e.target.value)} />
                     </div>
                 </div>
                 <div className="formInput">

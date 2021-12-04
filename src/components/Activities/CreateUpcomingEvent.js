@@ -1,27 +1,27 @@
 import { useState } from "react";
 
-const CreateAicteEvent = () => {
+const CreateUpcomingEvent = () => {
     const [eventName, setEventName] = useState("");
     const [eventDetails, setEventDetails] = useState("");
 
     const createUpcomingEvent = (e) => {
         e.preventDefault();
         console.log(eventName, eventDetails);
-        // fetch('http://localhost:5000/api/v1/activities', {
-        //     method: 'POST',
-        //     body: JSON.stringify({
-        //         event_name: eventName,
-        //         start_date: eventDetails,
-        //     }),
-        //     headers: {
-        //         'Content-type': 'application/json; charset=UTF-8',
-        //     },
-        // })
-        //     .then((response) => response.json())
-        //     .then((json) => {
-        //         console.log(json);
-        //         alert(`Event succesfully entered: ${eventName}`);
-        //     });
+        fetch('http://localhost:5000/api/v1/create-upcoming-event', {
+            method: 'POST',
+            body: JSON.stringify({
+                event_name: eventName,
+                event_details: eventDetails,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json);
+                alert(`Event succesfully entered: ${eventName}`);
+            });
     }
 
     return ( 
@@ -48,4 +48,4 @@ const CreateAicteEvent = () => {
      );
 }
  
-export default CreateAicteEvent;
+export default CreateUpcomingEvent;

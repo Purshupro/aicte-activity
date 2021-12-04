@@ -6,7 +6,7 @@ import Login from './components/Login';
 import Home from './components/Home/Home';
 import CreateNewEvent from './components/Activities/CreateNewEvent';
 import AllEvents from './components/Activities/AllEvents';
-import CreateAicteEvent from './components/Activities/CreateAicteEvent';
+import CreateUpcomingEvent from './components/Activities/CreateUpcomingEvent';
 import AboutUs from './components/AboutUs';
 import Mathrubhasha from './components/Mathrubhasha';
 
@@ -26,7 +26,7 @@ function App() {
             <AboutUs />
           </Route>
           <Route path="/create-event">
-            <CreateAicteEvent />
+            <CreateUpcomingEvent />
           </Route>
           <Route path="/events">
             <AllEvents />
