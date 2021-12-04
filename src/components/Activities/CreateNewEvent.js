@@ -12,7 +12,7 @@ const CreateNewEvent = () => {
     const [broucher, setBroucher] = useState("");
     const [mode, setMode] = useState("");
     const [eventType, setEventType] = useState("");
-    const [image, setImage] = useState("");
+    // const [image, setImage] = useState("");
 
     const registerUser = (e) => {
         e.preventDefault();
@@ -27,7 +27,7 @@ const CreateNewEvent = () => {
                 dept: department,
                 mode: mode,
                 broucher: broucher,
-                image: image,
+                // image: image,
                 event_type: eventType
             }),
             headers: {
@@ -83,8 +83,8 @@ const CreateNewEvent = () => {
                         onChange={(e) => setMode(e.target.value)}
                     >
                         <Box sx={{ display: 'flex' }}>
-                            <FormControlLabel value={mode} control={<Radio />} label="Online" />
-                            <FormControlLabel value={mode} control={<Radio />} label="Offline" />
+                            <FormControlLabel value="1" control={<Radio />} label="Online" />
+                            <FormControlLabel value="0" control={<Radio />} label="Offline" />
                         </Box>
                     </RadioGroup>
                 </FormControl>
@@ -100,12 +100,12 @@ const CreateNewEvent = () => {
                         <input type="file" name="fileUpload" id="fileUpload" value={broucher} onChange={(e) => setBroucher(e.target.value)} />
                     </div>
                 </div>
-                <div className="formInput">
+                {/* <div className="formInput">
                     <label htmlFor="imageUpload">Upload Images</label>
                     <div>
                         <input type="image" alt="Upload Image" name="imageUpload" id="imageUpload" value={image} onChange={(e) => setImage(e.target.value)} />
                     </div>
-                </div>
+                </div> */}
                 <div className="formInput">
                     <label htmlFor="department">Department</label>
                     <div>
