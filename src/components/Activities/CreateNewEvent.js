@@ -1,5 +1,6 @@
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
+import { Box } from "@mui/system";
 import { useState } from "react";
-// import { Link } from "react-router-dom";
 
 const CreateNewEvent = () => {
     const [eventName, setEventName] = useState("");
@@ -8,10 +9,11 @@ const CreateNewEvent = () => {
     const [timings, setTimings] = useState("");
     const [participants, setParticipants] = useState("");
     const [department, setDepartment] = useState("");
+    const [file, setFile] = useState("");
+    const [eventType, setEventType] = useState("");
 
     const registerUser = (e) => {
         e.preventDefault();
-        alert(`The name you entered was: ${eventName}`);
         fetch('http://localhost:5000/api/v1/activities', {
             method: 'POST',
             body: JSON.stringify({
@@ -27,12 +29,15 @@ const CreateNewEvent = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => {
+                console.log(json);
+                alert(`Event succesfully entered: ${eventName}`);
+            });
     }
 
     return (
         <div className="login-register">
-            <h2>Add Upcoming Event</h2>
+            <h2>Event Details</h2>
             <form onSubmit={registerUser} method="post">
                 <div className="formInput">
                     <label htmlFor="eventName">Event Name</label>
@@ -40,24 +45,42 @@ const CreateNewEvent = () => {
                         <input type="text" name="eventName" id="eventName" value={eventName} onChange={(e) => setEventName(e.target.value)} />
                     </div>
                 </div>
-                <div className="formInput">
-                    <label htmlFor="startDate">Start Date</label>
-                    <div>
-                        <input type="date" name="startDate" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-                    </div>
+                <div className="formInput ">
+                    <Box sx={{ display: 'flex' }}>
+                        <span>
+                            <label htmlFor="startDate">Start Date</label>
+                            <div>
+                                <input type="date" name="startDate" id="startDate" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+                            </div>
+                        </span>
+
+                        <span className="spanMargin">
+                            <label htmlFor="endDate">End Date</label>
+                            <div>
+                                <input type="date" name="endDate" id="endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+                            </div>
+                        </span>
+                        <span className="spanMargin">
+                            <label htmlFor="timings">Timings</label>
+                            <div>
+                                <input type="time" name="timings" id="timings" value={timings} onChange={(e) => setTimings(e.target.value)} />
+                            </div>
+                        </span>
+                    </Box>
                 </div>
-                <div className="formInput">
-                    <label htmlFor="endDate">End Date</label>
-                    <div>
-                        <input type="date" name="endDate" id="endDate" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-                    </div>
-                </div>
-                <div className="formInput">
-                    <label htmlFor="timings">Timings</label>
-                    <div>
-                        <input type="time" name="timings" id="timings" value={timings} onChange={(e) => setTimings(e.target.value)} />
-                    </div>
-                </div>
+                <FormControl component="fieldset">
+                    <FormLabel component="legend">Mode</FormLabel>
+                    <RadioGroup
+                        aria-label="mode"
+                        defaultValue="online"
+                        name="radio-buttons-group"
+                    >
+                        <Box sx={{ display: 'flex' }}>
+                            <FormControlLabel value="online" control={<Radio />} label="Online" />
+                            <FormControlLabel value="offline" control={<Radio />} label="Offline" />
+                        </Box>
+                    </RadioGroup>
+                </FormControl>
                 <div className="formInput">
                     <label htmlFor="participants">Number of Participants</label>
                     <div>
@@ -65,9 +88,21 @@ const CreateNewEvent = () => {
                     </div>
                 </div>
                 <div className="formInput">
+                    <label htmlFor="fileUpload">File</label>
+                    <div>
+                        <input type="file" name="fileUpload" id="fileUpload" value={file} onChange={(e) => setFile(e.target.value)} />
+                    </div>
+                </div>
+                <div className="formInput">
                     <label htmlFor="department">Department</label>
                     <div>
                         <input type="text" name="department" id="department" value={department} onChange={(e) => setDepartment(e.target.value)} />
+                    </div>
+                </div>
+                <div className="formInput">
+                    <label htmlFor="eventType">Event Type</label>
+                    <div>
+                        <input type="text" name="eventType" id="eventType" value={eventType} onChange={(e) => setEventType(e.target.value)} />
                     </div>
                 </div>
                 <div className="buttonContainer">

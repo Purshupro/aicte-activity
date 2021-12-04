@@ -17,6 +17,9 @@ code {
 .navbar {
   background-color: #9591f1;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 
 .logo_container {
@@ -58,7 +61,7 @@ code {
 }
 
 .login-register {
-  width: 350px;
+  width: max-content;
   min-height: 400px;
   background: #d5e2ff;
   border-radius: 8px;
@@ -87,6 +90,7 @@ code {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   background: whitesmoke;
+  width: 100%;
 }
 
 .buttonContainer {
@@ -94,7 +98,7 @@ code {
 }
 
 .loginBtnContainer {
-  /* margin-left: 20px; */
+  margin-left: 30px;
   float: right;
 }
 
@@ -155,4 +159,9 @@ code {
 
 .events_card h6 {
   margin: 5px 0;
+}
+
+.spanMargin {
+  display: inline-block;
+  margin-left: 16px;
 }

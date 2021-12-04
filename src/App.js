@@ -6,6 +6,9 @@ import Login from './components/Login';
 import Home from './components/Home/Home';
 import CreateNewEvent from './components/Activities/CreateNewEvent';
 import AllEvents from './components/Activities/AllEvents';
+import CreateAicteEvent from './components/Activities/CreateAicteEvent';
+import AboutUs from './components/AboutUs';
+import Mathrubhasha from './components/Mathrubhasha';
 
 function App() {
   return (
@@ -13,8 +16,17 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path="/create-event">
+          <Route path="/event-details">
             <CreateNewEvent />
+          </Route>
+          <Route path="/single-event/1">
+            <Mathrubhasha />
+          </Route>
+          <Route path="/about-us">
+            <AboutUs />
+          </Route>
+          <Route path="/create-event">
+            <CreateAicteEvent />
           </Route>
           <Route path="/events">
             <AllEvents />
