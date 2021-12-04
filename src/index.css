@@ -13,7 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
 .navbar {
   background-color: #9591f1;
   color: white;

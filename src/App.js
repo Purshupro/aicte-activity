@@ -20,7 +20,13 @@ function App() {
             <CreateNewEvent />
           </Route>
           <Route path="/single-event/1">
-            <Mathrubhasha />
+            <Mathrubhasha page="1"/>
+          </Route>
+          <Route path="/single-event/2">
+            <Mathrubhasha page="2"/>
+          </Route>
+          <Route path="/single-event/3">
+            <Mathrubhasha page="3"/>
           </Route>
           <Route path="/about-us">
             <AboutUs />
