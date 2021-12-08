@@ -19,7 +19,12 @@ const Registration = () => {
             },
         })
             .then((response) => response.json())
-            .then((json) => console.log(json));
+            .then((json) => {
+                console.log(json)
+                alert(json.message);
+                window.localStorage.setItem('isLoggedInUser', true);
+                window.location.href = '/dashboard';
+            });
     }
 
     return (

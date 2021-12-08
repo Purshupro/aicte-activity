@@ -6,6 +6,14 @@ const Navbar = () => {
         color: 'white'
     };
 
+    const logOut = () => {
+        localStorage.clear();
+        const confirm = window.confirm('Are you sure you want to log out ?');
+        if(confirm) {
+            window.location.href = "/"
+        }
+    }
+
     return (
         <nav className="navbar">
             <div className="navContainer">
@@ -21,6 +29,8 @@ const Navbar = () => {
                     <Link to="/create-event" style={linkStyle}><li className="item">Add Event</li></Link>
                     <Link to="/about-us" style={linkStyle}><li className="item">About Us</li></Link>
                     <li className="item searchInput"><input type="search" name="searchBox" id="searchBox" placeholder="Search For Events" /></li>
+                    <button className="item" onClick={logOut}>Log Out</button>
+
                 </ul>
             </div>
         </nav>
